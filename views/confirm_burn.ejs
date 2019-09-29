@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html class="no-js">
+<% include partials/head.ejs %>
+<body id="generate" style="zoom: 1;">
+<% include partials/banner.ejs %>
+
+  <div class="private">
+
+    <div class="secret">
+      <span class="pretext">Secret: </span>
+    </div>
+      <% if (locals.passwordError) { %>
+      <div class="alert alert-error">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <strong>Oops!</strong> Double check that passphrase
+      </div>
+      <% } %>
+
+    <form method="POST">
+    <% if (locals.requirePassword) { %>
+      <div class="control-group passphrase">
+        <div class="controls">
+          <input type="password" name="password" id="passField" class="input-large" value="" placeholder="Enter the passphrase here">
+        </div>
+      </div>
+    <% } %>
+      <button class="btn btn-block btn-large btn-warning cufon" type="submit"><i class="icon-fire"></i> Confirm: Burn this secret</button>
+      <a class="btn btn-block btn-large cufon" href="/">Cancel</a>
+      <hr>
+      <p class="hint">Burning a secret is permanent and cannot be undone</p>
+    </form>
+
+  </div>
+
+
+  <hr>
+
+<% include partials/footer_scripts.ejs %>
+
+</body></html>

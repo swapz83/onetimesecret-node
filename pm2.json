@@ -1,0 +1,12 @@
+{
+    "apps": [
+      {
+        "name": "ots",
+        "script": "./app.js",
+        "watch": false,
+        "instances": 2,
+        "exec_mode": "fork",
+        "args": "--key={{key}} --iv={{iv}} --redisHost={{redisHost}} --redisPort={{redisPort}}"
+      }
+    ]
+}
